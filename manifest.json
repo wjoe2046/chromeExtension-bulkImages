@@ -2,16 +2,17 @@
   "name": "ImgCrawl",
   "description": "Crawl images on a webpage and download it to your local drive",
   "version": "0.1",
+  "permissions": ["<all_urls>", "tabs", "activeTab"],
   "browser_action": {
     "default_popup": "popup/index.html"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["jquery-3.4.1.js", "background.js"]
   },
   "content_scripts": [
     {
-      "matches": ["*://www.google.com/*"],
-      "js": ["content.js"]
+      "matches": ["<all_urls>"],
+      "js": ["jquery-3.4.1.js", "content.js"]
     }
   ],
   "manifest_version": 2
