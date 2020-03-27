@@ -1,18 +1,18 @@
 {
-  "name": "ImgCrawl",
-  "description": "Crawl images on a webpage and download it to your local drive",
+  "name": "ImgCrawler",
+  "description": "Download Image on Your Page!",
   "version": "0.1",
-  "permissions": ["<all_urls>", "tabs", "activeTab"],
+  "permissions": ["<all_urls>", "tabs", "activeTab", "downloads"],
   "browser_action": {
     "default_popup": "popup/index.html"
   },
   "background": {
-    "scripts": ["jquery-3.4.1.js", "background.js"]
+    "scripts": ["jquery-3.4.1.min.js", "background.js"]
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["jquery-3.4.1.js", "content.js"]
+      "js": ["jquery-3.4.1.min.js", "content.js"]
     }
   ],
   "manifest_version": 2
